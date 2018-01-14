@@ -210,13 +210,14 @@ void callback(char* topic, byte* payload, unsigned int length) {
     {
       digitalWrite(lockPin,LOW);
       Serial.println("Door locked");
+      client.publish("apartment/status","1");
       
       }
       if (data=='1')
     {
       digitalWrite(lockPin,HIGH);
       Serial.println("Door opened");
-      
+      client.publish("apartment/status","0");
       }
 
 //--------------------------AC control--------------------------------//
@@ -226,13 +227,14 @@ void callback(char* topic, byte* payload, unsigned int length) {
     {
       digitalWrite(acPin,HIGH);
       Serial.println("AC ON");
+      client.publish("apartment/status","2");
       
       }
       if (data=='3')
     {
       digitalWrite(acPin,LOW);
       Serial.println("AC OFF");
-      
+      client.publish("apartment/status","3");
       }
 
 //----------------------------Light control----------------------------//
@@ -249,6 +251,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
       Serial.println(lightStatus);
       //Serial.print("ledStatus:");
       //Serial.println(ledStatus);
+      client.publish("apartment/status","4");
 
       
       }
@@ -259,7 +262,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
       lightStatus="0";
       Serial.print("lightStatus:");
       Serial.println(lightStatus);
-      
+      client.publish("apartment/status","5");
       }
        
   }}
