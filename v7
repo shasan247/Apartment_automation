@@ -296,6 +296,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
        
   }}
 
+//-------------------------Publishing device status upon request from user app--------------------------//
+
 
   if(strcmp(topic, "apartment/login") == 0){
   for (int i = 0; i < length; i++) {
@@ -315,18 +317,21 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   }
 
+//----------------------Restarting the board from Engineer's end----------------------------//
+
+
 
   if(strcmp(topic, "apartment/reset") == 0){
   Serial.print("Message:");
   for (int i = 0; i < length; i++) {
     Serial.print((char)payload[i]);
-    char data=payload[i];
+    char data3=payload[i];
     
   
-    if (data=='1')
+    if (data3=='1')
     {
       
-      Serial.println("Resetting NodeMCU.........");
+      Serial.println("Resetting Device.........");
        ESP.restart();
       }}}
        
