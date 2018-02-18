@@ -27,7 +27,7 @@ void ISRwatchdog(){
 
 #define lockPin 13             // NODE MCU PIN D7
 #define acPin 5                // NODE MCU PIN D1
-#define lightPin 4                     // NODE MCU PIN D2
+#define lightPin 4             // NODE MCU PIN D2
 #define pirPin 14              // NODE MCU PIN D5
 #define ledPin 12              // NODE MCU PIN D6
 #define lightPin2 0            //NODE MCU PIN D3
@@ -129,7 +129,7 @@ void loop()
 
         digitalWrite(lightPin2,LOW);//Light on
         digitalWrite(lightPin3,LOW);
-        digitalWrite(ledPin,LOW);
+        digitalWrite(lightPin,LOW);
         lightStatus="1";
         Serial.println("light on");
     
@@ -145,7 +145,7 @@ void loop()
         delay(120000);
         digitalWrite(lightPin2,HIGH);//Light off
         digitalWrite(lightPin3,HIGH);
-        digitalWrite(ledPin,HIGH);
+        digitalWrite(lightPin,HIGH);
         lightStatus="0";
         Serial.println("light off");
     
