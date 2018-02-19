@@ -159,6 +159,7 @@ void loop()
   
      if(digitalRead(pirPin) == HIGH){
 
+        //lockLow=true;
         pirStatus="1";
         //client.publish("apartment/pir","Motion start");
         //digitalWrite(motionsencePin, HIGH);   //the led visualizes the sensors output pin state
