@@ -400,7 +400,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     if (data2=='1')
     {
 
-      client.publish("apartment/status1",msg);
+      client.publish("apartment/status",msg);
       Serial.print("Published Status:");
       Serial.println(msg);
 
