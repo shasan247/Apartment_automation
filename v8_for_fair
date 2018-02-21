@@ -221,21 +221,21 @@ void callback(char* topic, byte* payload, unsigned int length) {
       lockStatus="1";
       }
       
-    if (data=='2')
+    if (data=='4')
     {
       digitalWrite(acPin,LOW);//AC off
       Serial.println("AC Off");
       acStatus="0";
       
       }
-     if (data=='3')
+     if (data=='5')
     {
       digitalWrite(acPin,HIGH);//ac on
       Serial.println("AC ON");
       acStatus="1";
       }
       
-      if (data=='4')
+      if (data=='2')
     {
       digitalWrite(drawinglightPin,LOW);//LIGHT ON
       digitalWrite(drawingtvPin,LOW);
@@ -247,7 +247,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
       }
       
       
-      if (data=='5')
+      if (data=='3')
     {
       
       digitalWrite(drawinglightPin,HIGH);//LIGHT OFF
