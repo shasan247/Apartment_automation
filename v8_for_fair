@@ -240,7 +240,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
       digitalWrite(drawinglightPin,LOW);//LIGHT ON
       digitalWrite(drawingtvPin,LOW);
       
-      Serial.print("drawing light on");
+      Serial.println("drawing light on");
+      Serial.println("drawing tv on");
       drawingStatus="1";
       Serial.print("drawingStatus:");
       Serial.println(drawingStatus);
@@ -253,6 +254,10 @@ void callback(char* topic, byte* payload, unsigned int length) {
       digitalWrite(drawinglightPin,HIGH);//LIGHT OFF
       digitalWrite(drawingtvPin,HIGH);
       drawingStatus="0";
+     
+      Serial.println("drawing light off");
+      Serial.println("drawing tv off");
+     
       Serial.print("drawingStatus:");
       Serial.println(drawingStatus);
       }
