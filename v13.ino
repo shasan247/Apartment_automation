@@ -76,7 +76,7 @@ int pirValue=0;
 const char* ssid = "DataSoft_WiFi";
 const char* password = "support123";
 //const char* mqtt_server = "broker.mqtt-dashboard.com";
-const char* mqtt_server = "182.48.84.180";
+const char* mqtt_server = "182.163.112.207";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
